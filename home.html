@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Peter Chen" />
+    <meta name="robots" content="index,follow" />
+    <title>後台管理系統</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/all.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- 側欄 -->
+      <aside class="sidebar vh-100 border-end d-flex bg-white flex-column pt-3">
+        <div class="px-4">
+          <a href="#" class="p"></a><i class="fas fa-child"></i>
+          <strong>童心教育機構</strong>
+          - 後台管理
+        </div>
+        <div class="overflow-auto mt-3">
+          <div>
+            <a href="home.html" class="sidebar-link active">
+              <div class="px-4">首頁</div>
+            </a>
+          </div>
+          <div>
+            <a
+              data-bs-toggle="collapse"
+              class="sidebar-link"
+              href="#menu-admin"
+              role="button"
+            >
+              <div class="d-flex justify-content-between px-4">
+                <p class="mb-0">
+                  <i class="bi bi-card-checklist me-2"></i>
+                  訂單管理
+                </p>
+                <i class="bi bi-caret-down"></i>
+              </div>
+            </a>
+            <div class="collapse" id="menu-admin" role="button">
+              <a
+                href="/orders.html"
+                class="d-block ps-5 text-dark text-decoration-none sidebar-link"
+              >
+                訂單列表
+              </a>
+              <a
+                href="/order.html"
+                class="d-block ps-5 text-dark text-decoration-none sidebar-link"
+              >
+                單一訂單細節
+              </a>
+            </div>
+          </div>
+          <div>
+            <a class="sidebar-link" href="/" role="button">
+              <div class="px-4">
+                <i class="bi bi-list-stars me-2"></i>
+                參考連結
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- 登出 -->
+        <a href="#" class="mt-auto sidebar-link active">
+          <div class="p-4"><i class="bi bi-box-arrow-left"></i>登出</div>
+        </a>
+      </aside>
+      <!-- 主要內容 -->
+      <main class="main">
+        <div class="bg-white w-100 border-bottom iconToggle sticky-top">
+          <a href="#" class="py-3 px-4 d-inline-block fs-3" id="menuToggle"
+            ><i class="bi bi-grid-3x3-gap"></i
+          ></a>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 p-3">
+          <div class="col">
+            <div class="card shadow-sm h-100">
+              <div class="card-body text-end">
+                <h2 class="display-6">學生人數</h2>
+                <p class="display-4">532人</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm h-100">
+              <div class="card-body text-end">
+                <h2 class="display-6">開班數</h2>
+                <p class="display-4">65班</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm h-100">
+              <div class="card-body text-end">
+                <h2 class="display-6">學年營業額</h2>
+                <span class="fs-5 text-secondary">NT$</span>
+                <span class="display-4 text-danger">942160</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col-lg-4">
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+                <canvas id="pie-chart" class="img-fluid"> </canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+                <canvas id="bar-chart" class="img-fluid"> </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-white px-0">
+            <div class="input-group-text bg-white border-0">
+              <span><i class="bi bi-search"></i></span>
+              <input
+                type="search"
+                name="search"
+                placeholder="搜尋"
+                class="form-control border-0 shadow-none"
+              />
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover text-nowrap mb-0">
+                <thead class="table-active">
+                  <tr class="align-middle">
+                    <th scope="col">訂單編號</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">學生姓名</th>
+                    <th scope="col">班系名稱</th>
+                    <th scope="col">付款狀態</th>
+                    <th scope="col">金額</th>
+                    <th scope="col">編輯</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">100001</th>
+                    <td>Mark@gmail.com</td>
+                    <td>Otto</td>
+                    <td>資優數學3A</td>
+                    <td>尚未付款</td>
+                    <td>10000</td>
+                    <td>
+                      <button class="btn btn-outline-primary">
+                        <i class="bi bi-pen me-1"></i>編輯
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100002</th>
+                    <td>Jacob@gmail.com</td>
+                    <td>Thornton</td>
+                    <td>珠算5級4B</td>
+                    <td>現金</td>
+                    <td>6000</td>
+                    <td>
+                      <button class="btn btn-outline-primary">
+                        <i class="bi bi-pen me-1"></i>編輯
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100003</th>
+                    <td>Larry@gmail.com</td>
+                    <td>Larry</td>
+                    <td>英文密集5A</td>
+                    <td>轉帳</td>
+                    <td>12000</td>
+                    <td>
+                      <button class="btn btn-outline-primary">
+                        <i class="bi bi-pen me-1"></i>編輯
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">100004</th>
+                    <td>flower@gmail.com</td>
+                    <td>陳小花</td>
+                    <td>流行舞蹈甲等4C</td>
+                    <td>現金</td>
+                    <td>8800</td>
+                    <td>
+                      <button class="btn btn-outline-primary">
+                        <i class="bi bi-pen me-1"></i>編輯
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer bg-white p-0">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-end mb-0">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./home.js"></script>
+  </body>
+</html>
