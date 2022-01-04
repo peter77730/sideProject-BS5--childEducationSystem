@@ -1,14 +1,3 @@
-// menu toggle
-const menuToggle = document.querySelector("#menuToggle");
-const body = document.querySelector("body");
-console.log(menuToggle);
-menuToggle.addEventListener("click", (e) => {
-  console.log(e);
-  console.log(body);
-  e.preventDefault(); //畫面不重整
-  body.classList.toggle("sidebar-toggled");
-});
-
 // 刪除訂單
 const deleteModal = document.querySelector("#deleteModal");
 const deleteModalText = document.querySelector("#deleteModalText");

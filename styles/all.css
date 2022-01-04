@@ -9113,26 +9113,6 @@ fieldset:disabled .btn {
   visibility: hidden !important;
 }
 
-.transition-ms-25 {
-  -webkit-transition: 0.25s !important;
-  transition: 0.25s !important;
-}
-
-.transition-ms-50 {
-  -webkit-transition: 0.5s !important;
-  transition: 0.5s !important;
-}
-
-.transition-ms-75 {
-  -webkit-transition: 0.75s !important;
-  transition: 0.75s !important;
-}
-
-.transition-ms-100 {
-  -webkit-transition: 1s !important;
-  transition: 1s !important;
-}
-
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -12649,8 +12629,12 @@ fieldset:disabled .btn {
 .sidebar {
   width: 280px;
   margin-left: -280px;
+  -webkit-transition: margin-left, 0.25s;
+  transition: margin-left, 0.25s;
   position: fixed;
   top: 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .sidebar .sidebar-link {
@@ -12687,31 +12671,49 @@ fieldset:disabled .btn {
 
 .sidebar-toggled .sidebar {
   margin-left: 0;
+  -webkit-transition: margin-left, 0.25s;
+  transition: margin-left, 0.25s;
 }
 
 .sidebar-toggled .main {
   width: calc(100vw - 280px);
   margin-left: 280px;
+  -webkit-transition: margin-left, 0.25s;
+  transition: margin-left, 0.25s;
 }
 
 @media (min-width: 992px) {
   .sidebar {
     width: 280px;
     margin-left: 0;
+    -webkit-transition: margin-left, 0.25s;
+    transition: margin-left, 0.25s;
   }
   .main {
     width: calc(100vw - 280px);
     margin-left: 280px;
+    -webkit-transition: margin-left, 0.25s;
+    transition: margin-left, 0.25s;
   }
   .sidebar-toggled .sidebar {
     margin-left: -280px;
+    -webkit-transition: margin-left, 0.25s;
+    transition: margin-left, 0.25s;
   }
   .sidebar-toggled .main {
     width: 100%;
     margin-left: 0;
+    -webkit-transition: margin-left, 0.25s;
+    transition: margin-left, 0.25s;
   }
   .sidebar-toggled .main {
     margin-left: 0;
+    -webkit-transition: margin-left, 0.25s;
+    transition: margin-left, 0.25s;
   }
+}
+
+body {
+  position: relative;
 }
 /*# sourceMappingURL=all.css.map */

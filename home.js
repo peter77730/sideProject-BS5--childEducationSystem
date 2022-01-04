@@ -1,14 +1,3 @@
-// menu toggle
-const menuToggle = document.querySelector("#menuToggle");
-const body = document.querySelector("body");
-console.log(menuToggle);
-menuToggle.addEventListener("click", (e) => {
-  console.log(e);
-  console.log(body);
-  e.preventDefault(); //畫面不重整
-  body.classList.toggle("sidebar-toggled");
-});
-
 (() => {
   const chartColors = {
     red: "rgb(255, 99, 132)",
