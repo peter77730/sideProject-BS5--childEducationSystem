@@ -7,10 +7,6 @@
 ![](https://i.imgur.com/slisto2.png)
 
 - 🔭 童心教育機構-後台管理系統 [childEducationSystem](https://peter77730.github.io/sideProject-BS5--childEducationSystem/)
-
-- 📝 登入後台測試帳號
-  api_path "peter77730"
-  token "mMbOGWzLLGahdTzsOQ5Giq6aTOA3"
  
  ## 使用技術👋
  - bootstrap5
